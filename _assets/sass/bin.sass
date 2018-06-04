@@ -1,0 +1,461 @@
+/* Variables */
+
+$primary-color: #484ba0
+$header1-color: #484ba0
+$header2-color: #484ba0
+$link-color: #24a0dd
+$alternate-link-color: #24a0dd
+$secondary-color: #24a0dd
+$tertiary-color: #f9cc70
+$tertiary-hover-color: #F7B733
+$paragraph-color: #424c5c
+$alternate-paragraph-color: #424c5c
+$background-color: #e8f0fe
+$card-background-color: #e8f0fe
+
+body
+  color: $primary-color
+  background-color: #fff
+  font-family: 'Muli', sans-serif
+  font-size: 1em
+  border-top: 4px solid $primary-color
+
+h1
+  font-size: 2em
+  line-height: 1.2em
+  letter-spacing: 0.5px
+  color: $header1-color
+
+h2
+  font-size: 1.6em
+  line-height: 1.1em
+  letter-spacing: 0.5px
+  color: $header2-color
+
+button
+  font-size: 1.4em
+
+span
+  font-size: 0.9em
+  font-weight: 300
+  color: $paragraph-color
+
+span.alt
+  color: $alternate-paragraph-color
+
+a
+  font-size: 0.8em
+  color: $link-color
+  text-decoration: none
+  border-bottom: 1px dashed $link-color
+
+a.alt
+  color: $alternate-link-color
+  border-bottom: 1px dashed $alternate-link-color
+
+a:hover
+  cursor: pointer
+  border-bottom: 1px solid $link-color
+
+a:hover
+  cursor: pointer
+  border-bottom: 1px solid $alternate-link-color
+
+p
+  font-size: 1em
+  color: $paragraph-color
+
+p a,
+span a
+  font-size: 1em
+
+/* Helper classes */
+
+.flex-column
+  display: flex
+  flex-direction: column
+
+.fade-in
+  transform: scale(1.25)
+  opacity: 0
+  transition: all 0.8s ease
+  @for $i from 1 through 20
+    &:nth-of-type(#{$i})
+      transition-delay: (150ms * $i)
+
+body.show .fade-in
+  transform: scale(1)
+  opacity: 1
+
+.bg-color
+  background-color: $background-color
+
+/* Styling */
+
+header
+  text-align: center
+  padding: 30px 0
+
+.header-link
+  font-size: 0.9em
+  line-height: 1.8em
+  letter-spacing: 0.5px
+  cursor: pointer
+  margin: 0 12px
+
+.headline
+  position: relative
+  padding: 30px 0
+  text-align: center
+  z-index: 2
+
+.headline.half-padding
+  padding: 20px 0 20px
+
+.pre-headline
+  font-size: 1.3em
+  font-weight: bold
+  font-style: italic
+  margin: 0 0 30px
+
+.headline-highlight
+  font-size: inherit
+  font-weight: bold
+  color: inherit
+  background: linear-gradient(to bottom, #fff, $background-color, #fff)
+  padding: 2px
+  border-radius: 50px
+
+.hero-image
+  width: 178px
+  height: 157.5px
+  margin: 0 0 30px
+
+.headline-circles
+  padding-top: 20px
+
+.headline-circle
+  display: inline-block
+  width: 16px
+  height: 16px
+  background-color: transparent
+  border: 4px solid $primary-color
+  border-radius: 100px
+  margin: 12px auto 0
+  opacity: 1
+
+.headline-circle:nth-child(2)
+  border: 4px solid #8e9ac3
+
+.headline-circle:nth-child(3)
+  border: 4px solid #a9b7e6
+
+.headline-circle.light
+  border: 4px solid $primary-color
+  margin: 0 6px 0 0
+
+.supporting-paragraphs,
+.statement-paragraphs,
+.questions,
+.about-paragraphs,
+.apply-paragraphs,
+.application
+  text-align: center
+  padding: 30px 0
+  position: relative
+  z-index: 1
+
+.about-paragraphs
+  text-align: left
+  background-color: initial
+  padding: 30px 0 0 0
+
+.statement-paragraphs
+  text-align: left
+  background-color: initial
+  padding: 30px 0 0 0
+
+.apply-paragraphs
+  text-align: left
+  background-color: initial
+  padding: 30px 0
+
+.application
+  padding: 20px
+  margin-bottom: 40px
+  text-align: center
+  background-color: $card-background-color
+  box-shadow: 0 10px 20px rgba(105, 114, 145,0.19), 0 6px 6px rgba(105, 114, 145,0.23)
+  border-top: 4px solid $primary-color
+
+.paragraph-container,
+.question-container
+  padding: 0 0 40px
+
+.supporting-paragraphs .paragraph-container:last-child
+  padding: 0
+
+.paragraph-container.highlight
+  padding: 20px
+  margin: 0 0 30px
+  background-color: $background-color
+  border-left: 4px solid $primary-color
+
+.question-container
+  position: relative
+  display: flex
+  flex-direction: row
+  flex-wrap: nowrap
+  padding: 0 0 40px
+
+.supporting-paragraph,
+.statement-paragraph,
+.about-paragraph,
+.apply-paragraph
+  font-size: 1.1em
+  line-height: 1.4em
+  letter-spacing: 0.3px
+
+.supporting-paragraph-text,
+.statement-paragraph-text,
+.question-text,
+.about-paragraph-text,
+.apply-paragraph-text
+  font-size: 1.2em
+  line-height: 1.5em
+
+.statement-paragraph-text strong
+  font-weight: normal
+
+.question-text
+  display: flex
+  justify-content: center
+  align-items: center
+  text-align: left
+  margin: 0 0 0 20px
+
+.supporting-paragraph-text-link,
+.statement-paragraph-text-link
+  cursor: pointer
+
+.supporting-paragraph:last-child,
+.statement-paragraph:last-child,
+.question-container:last-child,
+.about-container:last-child,
+.apply-paragraph:last-child
+  padding-bottom: 0
+
+.statement-lead,
+.about-lead,
+.apply-lead
+  font-size: 1.2em
+  font-weight: bold
+
+.supporting-paragraph-icon
+  position: absolute
+  top: -30px
+  left: -20px
+  width: 60px
+  height: 60px
+  opacity: 0.15
+  z-index: -1
+  margin: 0 0 20px
+
+.question-number
+  flex: 0 0 25%
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 80px
+  height: 80px
+  font-size: 2.8em
+  font-weight: normal
+  border-radius: 100px
+  background-color: $primary-color
+  color: #ffffff
+  opacity: 1
+  z-index: -1
+
+.application-form
+  padding: 30px 0
+  display: flex
+  flex-direction: column
+
+.application-input
+  margin: 20px 0 0 0
+  background: #ffffff
+  border: none
+  border-radius: 4px
+  padding: 10px
+  background-color: #ffffff
+  color: $primary-color
+  font-family: 'Muli', sans-serif
+  font-size: 0.7em
+
+.application-input::placeholder
+  color: $paragraph-color
+  opacity: 0.65
+
+.application-input:first-child
+  margin: 0
+
+.video-blocks
+  padding: 30px 0
+
+.video-block
+  position: relative
+  padding: 20px
+  margin-bottom: 60px
+  text-align: center
+  background-color: $card-background-color
+  box-shadow: 0 10px 20px rgba(105, 114, 145,0.19), 0 6px 6px rgba(105, 114, 145,0.23)
+  border-top: 4px solid $primary-color
+
+.idea-tag
+  position: absolute
+  top: -30px
+  right: -30px
+  width: 60px
+  height: 60px
+  display: flex
+  justify-content: center
+  align-content: center
+  align-items: center
+  border-radius: 100px
+  background-color: $primary-color
+  color: #ffffff
+  text-transform: uppercase
+  font-size: 1em
+
+.video
+  flex: 1 0 auto
+  width: 100%
+  height: 200px
+  max-height: 200px
+  margin: 30px auto
+
+.video-divider
+  width: 30%
+  margin: 0 auto
+  border-top: 2px solid $primary-color
+
+.video-block:last-child .video-divider
+  display: none
+
+.button-link
+  border: none
+  pointer-events: none
+
+.button-link:hover
+  cursor: auto
+  border: none
+
+.cta-button,
+.application-submit-button
+  width: 100%
+  cursor: pointer
+  pointer-events: auto
+  padding: 20px
+  border: none
+  border-radius: 4px
+  background-color: $tertiary-color
+  color: #222222
+  font-family: 'Muli', sans-serif
+  font-weight: bold
+  line-height: 1.3em
+  letter-spacing: 0.5px
+  transition: all 0.25s ease
+
+.application-submit-button
+  margin: 20px 0 0 0
+  font-size: 1.2em
+
+.cta-button:hover,
+.application-submit-button:hover
+  background-color: $tertiary-hover-color
+
+.disclaimer
+  margin: 15px 0
+  font-size: 0.8em
+  line-height: 1.4em
+  letter-spacing: 0.2px
+  opacity: 0.8
+
+.disclaimer-link
+  font-size: 1em
+  color: $link-color
+  text-decoration: none
+  border-bottom: 1px dashed $link-color
+
+.social-link
+  text-decoration: none
+  border: none
+
+.social-link:hover
+  border: none
+
+footer
+  margin: 0 0 30px
+
+.footer-text
+  display: block
+  text-align: center
+  padding: 0 0 20px
+
+.footer-logo
+  display: block
+  width: 246px
+  height: auto
+  margin: 0 auto
+
+.tippy-tooltip.bin-theme .tippy-content
+  font-family: 'Muli', sans-serif
+
+.tippy-tooltip.bin-theme .tippy-content a
+  font-size: 1em
+
+/* Larger device styling */
+
+@media (min-width: 768px)
+  h1
+    font-size: 2.4em
+    line-height: 1.2em
+
+  h2
+    font-size: 2em
+    line-height: 1.2em
+
+  .hero-image
+    width: auto
+    height: auto
+
+  .supporting-paragraph-text,
+  .statement-paragraph-text,
+  .question-text,
+  .about-paragraph-text,
+  .apply-paragraph-text
+    font-size: 1em
+    line-height: 1.4em
+
+  .question-text
+    font-size: 1.2em
+    line-height: 1.5em
+
+  .application-form
+    margin: 0 auto
+
+  .video
+    height: 400px
+    max-height: 400px
+
+  .cta-button
+    font-size: 1.4em
+
+  .application-submit-button
+    font-size: 1em
+
+  .disclaimer
+    font-size: 0.9em
+
+  .application-input
+    font-size: 1.1em
