@@ -32,14 +32,6 @@ exclude:
   - "Gemfile"
   - "Gemfile.lock"
 
-defaults:
-  -
-    scope:
-      path: ""
-      types: "posts"
-    values:
-      layout: "post"
-
 assets:
   sources:
     - _assets/sass
